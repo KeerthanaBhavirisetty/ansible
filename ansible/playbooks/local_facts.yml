@@ -1,0 +1,5 @@
+- name: Printing local files defined in info.fact
+  hosts: all
+  tasks:
+    - debug:
+        msg: Name of app is {{ansible_local.info.Name}} and is in {{ansible_local.info.Env}} environment.

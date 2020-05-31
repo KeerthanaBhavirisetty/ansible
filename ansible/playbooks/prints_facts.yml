@@ -1,0 +1,15 @@
+- name: Printing from gathered facts
+  hosts: all
+  tasks: 
+   - name: printing a fact
+     debug:
+       msg: IP address is {{ansible_default_ipv4.address}}
+
+- name: Disbaling gathering facts
+  hosts: all
+  gather_facts: false
+  tasks:
+    - debug:
+        msg: URL value is {{URL}}
+      vars:
+         URL: local.facts.google.com

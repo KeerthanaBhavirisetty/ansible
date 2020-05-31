@@ -1,0 +1,7 @@
+- name: Demo for set_facts
+  hosts: all
+  tasks:
+     - set_fact:
+        URL: facts.google.com
+     - debug:
+        msg: URL is {{URL}}

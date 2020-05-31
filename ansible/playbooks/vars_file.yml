@@ -1,0 +1,11 @@
+- name: Demo for reading var from another file
+  hosts: all
+  vars_files:
+   - variables.yml
+  tasks:
+   - name: VAriable from file
+     debug: 
+      msg: "URL is {{URL}}"
+   - name: variable from CLI
+     debug:
+      msg: URL from cli is {{URL2}}

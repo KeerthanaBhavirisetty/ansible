@@ -1,0 +1,15 @@
+- name: Install when server on diff OS
+  hosts: all
+  tasks:
+   - name: Install webserver on centos machine
+     package: 
+       name: httpd
+       state: present
+     when: ansible_user_id == 'centos'
+
+   - name: Install webserver on Ubuntu machine
+     package: 
+       name: apache2
+       state: present
+     when: ansible_user_id == 'ubuntu'
+     become: yes

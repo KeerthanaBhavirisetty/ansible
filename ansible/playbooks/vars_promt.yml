@@ -1,0 +1,10 @@
+- name: Demo for prompting var from command prompt
+  hosts: all
+  vars_prompt:
+   prompt: Enter the URL
+   name: URL
+   private: no
+  tasks:
+   - name: VAriable promt
+     debug: 
+      msg: "URL is {{URL}}"

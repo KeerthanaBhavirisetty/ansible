@@ -1,0 +1,21 @@
+- name: How to handle when we have errors
+  hosts: centos
+  become: yes
+  tasks:
+   - name: Check whther httpd is running or not.
+     shell: ps -ef | grep httpd | grep -v grep
+     register: out
+     ignore_errors: yes
+
+   - name: Start httpd if not started
+     service:
+       name: httpd
+       state: started
+     when: out.rc == 1
+
+   - name: Start httpd if started
+     service:
+       name: httpd
+       state: restarted
+     when: out.rc == 0
+

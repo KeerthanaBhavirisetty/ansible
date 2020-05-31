@@ -1,0 +1,13 @@
+- name: Demo of variables with var command
+  hosts: all
+  vars:
+    URL: vars.google.com
+  tasks:
+   - name: Printing of a varible URL
+     debug:
+      msg: "Value of URL is {{URL}}"
+   - name: Printing variable from a task
+     debug:
+      msg: "Value of URL in this task is {{URL}}"
+     vars:
+      URL: tasks.google.com

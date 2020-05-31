@@ -1,0 +1,29 @@
+- name: Copy files from ansible server to node
+  hosts: all
+  tasks:
+   - name: Copying from sample.txt
+     copy:
+       src: /tmp/sample.txt
+       dest: /tmp/sample.txt
+
+
+- name: Content handling with blockinfile
+  hosts: all
+  tasks:
+   - name: blockin file example.
+     blockinfile:
+      create: yes
+      path: /tmp/sample.txt
+      block: |
+        Hello
+        My dear world!
+
+- name: Line in file example
+  hosts: all
+  tasks:
+   - lineinfile:
+       path: /tmp/sample2.txt
+       create: yes
+       insertbefore: EOF
+       line: Hello world , new middle line modified
+      

@@ -1,0 +1,6 @@
+- name: Print the msgs in different nodes
+  hosts: all
+  tasks:
+    - name: Task1 from play1
+      debug:
+         msg: "Hello from play1"

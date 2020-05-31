@@ -1,0 +1,19 @@
+- name: Installing multiple services with loops
+  hosts: centos
+  become: yes
+  tasks:
+    - name: Looping
+      package:
+       name: "{{item}}"
+       state: present
+      loop:
+       - httpd
+       - vim
+       - unzip
+
+    - name: handling hash loops
+      debug:
+       msg: Course name is {{item.name}} Course time is {{item.time}}
+      loop:
+       - {name: Devops, time: 7 am}
+       - {name: AWS, time: 8 am}

@@ -1,0 +1,13 @@
+- name: Read the o/p of a task
+  hosts: all
+  tasks:
+   - name: run a commnd
+     shell: id
+     register : out
+   - name: read the o/p
+     debug:
+      msg: "{{out}}"
+   - name: read the o/p
+     debug:
+      msg: "{{out.stdout}}"
+   
