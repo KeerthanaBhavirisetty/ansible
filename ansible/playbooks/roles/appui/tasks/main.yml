@@ -1,8 +1,7 @@
 - name: Tomcat download and unarchive
   get_url:
-   src: "{{TOMCAT_URL}}"
+   url: "{{TOMCAT_URL}}"
    dest: /home/{{APP_USER}}
-   remote_src: yes
   become_user: "{{APP_USER}}"
 
 
