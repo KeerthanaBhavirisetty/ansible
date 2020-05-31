@@ -23,7 +23,7 @@
 - name: Configure the db connection 
   template:
    src: context.xml.j2
-   dest: "{{TOMCAT_LOCATION}}/conf/context.xml"
+   dest: "/etc/tomcat/context.xml"
 
 
 - name: Restart tomcat service
