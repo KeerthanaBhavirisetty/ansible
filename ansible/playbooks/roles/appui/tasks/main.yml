@@ -14,7 +14,7 @@
   get_url:
     url: "{{WEBAPP_URL}}"
     dest: "{{TOMCAT_LOCATION}}/webapps"
-  become_user: "{{APP_USER}}"
+  become: yes
 
 - name: Download sql jar
   get_url:
