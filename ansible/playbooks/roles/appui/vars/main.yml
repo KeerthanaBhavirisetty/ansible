@@ -3,6 +3,7 @@ TOMCAT_URL: https://apache.mirrors.nublue.co.uk/tomcat/tomcat-8/v8.5.55/bin/apac
 WEBAPP_URL: https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war
 SQLJAR_URL: https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar
 TOMCAT_LOCATION: /home/{{APP_USER}}/apache-tomcat-{{TOMCAT_VERSION}}
+TOMCAT_LOCATION: /var/lib/tomcat
 
 DBUSER: dummy
 DBPASS: dummy
