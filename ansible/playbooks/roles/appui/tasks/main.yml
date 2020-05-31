@@ -4,10 +4,10 @@
 #   dest: /home/{{APP_USER}}
 #  become_user: "{{APP_USER}}"
 
--name: install existing tomcat
- package:
-   name: tomcat
-   state: present
+- name: install existing tomcat
+  package:
+    name: tomcat
+    state: present
 
 
 - name: download application and place in webapps folder
